@@ -73,61 +73,16 @@
             },
             controller: FoundItemsDirectiveController,
             controllerAs: 'foundItemsCtrl',
-            bindToController: true,
-            link: FoundItemsDirectiveLink
+            bindToController: true
         };
 
         return ddo;
     }
 
-    function FoundItemsDirectiveLink(scope, element, attrs, controller) {
-
-        scope.$watch('foundItemsCtrl.itemsLength()', function(length) {
-            if (length === undefined) {
-							hideAll();
-            } else if (length === 0) {
-							showWarning();
-            } else {
-							showTable();
-            }
-        });
-
-				function showWarning(){
-					var divElement = element.find('div.text-danger');
-					var tableElement = element.find('table.table');
-
-					divElement.show();
-					tableElement.hide();
-				}
-
-				function showTable(){
-					var divElement = element.find('div.text-danger');
-					var tableElement = element.find('table.table');
-
-					divElement.hide();
-					tableElement.show();
-				}
-
-				function hideAll(){
-					var divElement = element.find('div.text-danger');
-					var tableElement = element.find('table.table');
-
-					divElement.hide();
-					tableElement.hide();
-				}
-
-    }
-
     function FoundItemsDirectiveController() {
 
         var foundItemsCtrl = this;
-        foundItemsCtrl.itemsLength = function() {
-						if (foundItemsCtrl.foundMenuItems === undefined){
-							return undefined;
-						} else {
-							return foundItemsCtrl.foundMenuItems.length;
-						}
-        };
+
     }
 
 

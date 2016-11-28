@@ -1,4 +1,4 @@
-<table class="table col-xs-12">
+<table class="table col-xs-12" ng-show="foundItemsCtrl.foundMenuItems.length > 0">
 	<thead>
 		<tr>
 			<th>Name</th>
@@ -16,4 +16,4 @@
 		</tr>
 	</tbody>
 </table>
-<div class="text-danger col-xs-12"><strong>Nothing Found!</strong></div>
+<div class="text-danger col-xs-12" ng-show="foundItemsCtrl.foundMenuItems.length === 0"><strong>Nothing Found!</strong></div>
